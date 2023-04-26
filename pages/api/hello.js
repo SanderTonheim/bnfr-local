@@ -64,29 +64,29 @@
 
 // import { SIGNATURE_HEADER_NAME, isValidSignature } from '@sanity/webhook'
 
-const handler = (req, res) => {
-	//authenticating the webhook
+// export default function handler(req, res) {
+//authenticating the webhook
 
-	// const signature = req.headers[SIGNATURE_HEADER_NAME].toString()
-	// if (!isValidSignature(JSON.stringify(req.body), signature, process.env.SANITY_WEBHOOK_SECRET)) return res.status(401).json({ msg: 'Invalid request!' })
-	//getting payload
-	const { slug } = req.body
-	// await res.revalidate(`/profile`)
-	// await res.revalidate(`/profile/${slug}`)
+// const signature = req.headers[SIGNATURE_HEADER_NAME].toString()
+// if (!isValidSignature(JSON.stringify(req.body), signature, process.env.SANITY_WEBHOOK_SECRET)) return res.status(401).json({ msg: 'Invalid request!' })
+//getting payload
+// const { slug } = req.body
+// await res.revalidate(`/profile`)
+// await res.revalidate(`/profile/${slug}`)
 
-	const algoliasearch = require('algoliasearch')
-	const client = algoliasearch('BC0Z4HS7B1', '7c31f7f4e01eaf32e1ce709e3ec8dd4c')
-	const index = client.initIndex('Members')
-	index.saveObject({
-			firstname: 'Jimmie',
-			lastname: 'Barninger',
-			city: 'New York',
-			objectID: 'myID',
-		})
-		.then(() => {
-			// done
-		})
-	res.status(200).json({ slug })
+// }
+
+export default function handler(req, res) {
+	// Check for secret to confirm this is a valid request
+
+	try {
+		// this should be the actual path not a rewritten path
+		// e.g. for "/blog/[slug]" this should be "/blog/post-1"
+		const { slug } = req.body
+		res.status(200).json({ slug })
+	} catch (err) {
+		// If there was an error, Next.js will continue
+		// to show the last successfully generated page
+		return res.status(500).send('Error revalidating')
+	}
 }
-
-export default handler
