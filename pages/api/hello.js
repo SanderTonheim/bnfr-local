@@ -67,39 +67,35 @@
 const handler = (req, res) => {
 	//authenticating the webhook
 
-	try {
-		// const signature = req.headers[SIGNATURE_HEADER_NAME].toString()
-		// if (!isValidSignature(JSON.stringify(req.body), signature, process.env.SANITY_WEBHOOK_SECRET)) return res.status(401).json({ msg: 'Invalid request!' })
-		//getting payload
-		// const { slug } = req.body
-		// await res.revalidate(`/profile`)
-		// await res.revalidate(`/profile/${slug}`)
+	// const signature = req.headers[SIGNATURE_HEADER_NAME].toString()
+	// if (!isValidSignature(JSON.stringify(req.body), signature, process.env.SANITY_WEBHOOK_SECRET)) return res.status(401).json({ msg: 'Invalid request!' })
+	//getting payload
+	const { slug } = req.body
+	// await res.revalidate(`/profile`)
+	// await res.revalidate(`/profile/${slug}`)
 
-		const algoliasearch = require('algoliasearch')
-		const client = algoliasearch('BC0Z4HS7B1', '7c31f7f4e01eaf32e1ce709e3ec8dd4c')
-		const index = client.initIndex('Members')
+	const algoliasearch = require('algoliasearch')
+	const client = algoliasearch('BC0Z4HS7B1', '7c31f7f4e01eaf32e1ce709e3ec8dd4c')
+	const index = client.initIndex('Members')
 
-		const objects = [
-			{
-				firstname: 'Jimmie',
-				lastname: 'Barninger',
-				objectID: 'myID1',
-			},
-			{
-				firstname: 'Warren',
-				lastname: 'Speach',
-				objectID: 'myID2',
-			},
-		]
+	const objects = [
+		{
+			firstname: 'Jimmie',
+			lastname: 'Barninger',
+			objectID: 'myID1',
+		},
+		{
+			firstname: 'Warren',
+			lastname: 'Speach',
+			objectID: 'myID2',
+		},
+	]
 
-		index.saveObjects(objects).then(({ objectIDs }) => {
-			console.log(objectIDs)
-		})
+	index.saveObjects(objects).then(({ objectIDs }) => {
+		console.log(objectIDs)
+	})
 
-		res.status(200).json({ msg: 'Product pages revalidated.' })
-	} catch (error) {
-		res.status(500).json({ err: 'Something went Wrong!' })
-	}
+	res.status(200).json({ slug })
 }
 
 export default handler
