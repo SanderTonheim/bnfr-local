@@ -76,7 +76,7 @@ const handler = (req, res) => {
 		// await res.revalidate(`/profile/${slug}`)
 
 		const algoliasearch = require('algoliasearch')
-		const client = algoliasearch('BC0Z4HS7B1', process.env.ALGOLIA_KEY)
+		const client = algoliasearch('BC0Z4HS7B1', '7c31f7f4e01eaf32e1ce709e3ec8dd4c')
 		const index = client.initIndex('Members')
 
 		const objects = [
