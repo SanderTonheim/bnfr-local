@@ -78,22 +78,8 @@ const handler = (req, res) => {
 	const client = algoliasearch('BC0Z4HS7B1', '7c31f7f4e01eaf32e1ce709e3ec8dd4c')
 	const index = client.initIndex('Members')
 
-	const objects = [
-		{
-			firstname: 'Jimmie',
-			lastname: 'Barninger',
-			objectID: 'myID1',
-		},
-		{
-			firstname: 'Warren',
-			lastname: 'Speach',
-			objectID: 'myID2',
-		},
-	]
-
-	index.saveObjects(objects).then(({ objectIDs }) => {
-		console.log(objectIDs)
-	})
+	const record = { objectID: 1, name: 'test_record' }
+	index.saveObject(record).wait()
 
 	res.status(200).json({ slug })
 }
