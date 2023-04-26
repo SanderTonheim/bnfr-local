@@ -70,11 +70,15 @@ const handler = (req, res) => {
 	try {
 		// const signature = req.headers[SIGNATURE_HEADER_NAME].toString()
 		// if (!isValidSignature(JSON.stringify(req.body), signature, process.env.SANITY_WEBHOOK_SECRET)) return res.status(401).json({ msg: 'Invalid request!' })
-
 		//getting payload
 		// const { slug } = req.body
 		// await res.revalidate(`/profile`)
 		// await res.revalidate(`/profile/${slug}`)
+
+		const algoliasearch = require('algoliasearch')
+		const client = algoliasearch('BC0Z4HS7B1', process.env.ALGOLIA_KEY)
+		const index = client.initIndex('Members')
+
 		res.status(200).json({ msg: 'Product pages revalidated.' })
 	} catch (error) {
 		res.status(500).json({ err: 'Something went Wrong!' })
