@@ -78,7 +78,7 @@ const handler = (req, res) => {
 		const algoliasearch = require('algoliasearch')
 		const client = algoliasearch('BC0Z4HS7B1', process.env.ALGOLIA_KEY)
 		const index = client.initIndex('Members')
-		
+
 		const objects = [
 			{
 				firstname: 'Jimmie',
