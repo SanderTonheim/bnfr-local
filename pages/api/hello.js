@@ -82,16 +82,18 @@ const handler = async (req, res) => {
 
 	const algoliasearch = require('algoliasearch')
 	const client = algoliasearch('BC0Z4HS7B1', '7c31f7f4e01eaf32e1ce709e3ec8dd4c')
-	const index = client.initIndex('members')
+	const index = client.initIndex('Members')
 	try {
 		const cmsData = await Client.fetch(groq`*[_type == "medlem"]`)
 		cmsData.map((item) => {
 			const obj = { objectID: item._id, name: item.name }
 			index.saveObject(obj)
 		})
+		const { slug } = req.body
+		await res.revalidate(`/profile`)
+		await res.revalidate(`/profile/${slug}`)
 
-		// const { slug } = req.body
-		res.status(200).json({ msg: 'updated' })
+		res.status(200).json({ page: `${slug} page was revalidated`, algolia: `added ${slug} to algolia` })
 	} catch (err) {
 		// If there was an error, Next.js will continue
 		// to show the last successfully generated page
