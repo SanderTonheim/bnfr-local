@@ -80,7 +80,7 @@ export const handler = async (req, res) => {
 	// Check for secret to confirm this is a valid request
 	const algoliasearch = require('algoliasearch')
 	// Connect and authenticate with your Algolia app
-	// const client = algoliasearch('BC0Z4HS7B1', '7c31f7f4e01eaf32e1ce709e3ec8dd4c')
+	const client = algoliasearch('BC0Z4HS7B1', '7c31f7f4e01eaf32e1ce709e3ec8dd4c')
 
 	// Create a new index and add a record
 	const index = client.initIndex('test_index')
