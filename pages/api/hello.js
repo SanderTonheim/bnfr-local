@@ -83,14 +83,13 @@ const handler = async (req, res) => {
 	const algoliasearch = require('algoliasearch')
 	const client = algoliasearch('BC0Z4HS7B1', '7c31f7f4e01eaf32e1ce709e3ec8dd4c')
 	const index = client.initIndex('test_index')
-	const cmsData = await Client.fetch(groq`*[_type == "medlem"]`)
 	try {
+		const cmsData = await Client.fetch(groq`*[_type == "medlem"]`)
 		const record = cmsData.map((item) => {
 			const obj = { objectID: item._id, name: item.name }
-			return obj
+			index.saveObject(obj)
+			return
 		})
-
-		index.saveObject(record)
 
 		// const { slug } = req.body
 		res.status(200).json(record)
