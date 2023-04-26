@@ -85,7 +85,7 @@ const handler = async (req, res) => {
 	const index = client.initIndex('Members')
 	try {
 		const { slug } = req.body
-		const cmsData = await Client.fetch(groq`*[_type == "medlem]{name,_id,certifications[]{name},connections[]->{name},tag[]->{Name},contactPerson}`)
+		const cmsData = await Client.fetch(groq`*[_type == "medlem]`)
 		cmsData.map((item) => {
 			const obj = { objectID: item._id, name: item.name }
 			index.saveObject(obj)
@@ -93,7 +93,7 @@ const handler = async (req, res) => {
 		await res.revalidate(`/profile`)
 		await res.revalidate(`/profile/${slug}`)
 
-		res.status(200).json({ algolia: `added ${slug} to algolia` })
+		res.status(200).json({ msg: 'indexed' })
 	} catch (err) {
 		// If there was an error, Next.js will continue
 		// to show the last successfully generated page
