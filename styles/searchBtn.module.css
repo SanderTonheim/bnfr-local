@@ -1,0 +1,27 @@
+/* ----- Knapper - for desktop/tablet ----- */
+
+.filterBtn {
+  width: 188px;
+  height: fit-content;
+  color: #ffffff;
+  background: #00535a;
+  border-radius: 32px;
+  border: none;
+  margin: 0.5rem;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: ease-in-out 100ms;
+}
+
+.filterBtn:hover {
+  box-shadow: 0 0 10px 1px #a9ede7;
+  transform: scale(1.03);
+}
+
+/* ----- Media Query for å bytte ut knapper med modal ----- */
+
+@media screen and (min-width: 355px) and (max-width: 694px) {
+  .filterBtn {
+    display: none;
+  }
+}

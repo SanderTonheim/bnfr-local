@@ -1,0 +1,30 @@
+.container,
+.otherContactInfo {
+	list-style-type: none;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	flex-wrap: nowrap;
+	gap: 0.25rem;
+}
+
+.mail,
+.phone,
+.website,
+.name,
+.address {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+.icon {
+	width: 1.5rem;
+}
+
+.contactPerson h3 {
+	margin-bottom: 6rem;
+}
+
+.website a:any-link {
+	color: black;
+}

@@ -1,0 +1,68 @@
+.navbar {
+	position: sticky;
+	top: 0%;
+	max-width: 100%;
+	max-height: 3rem;
+	background-color: #a9ede7;
+	z-index: 10;
+	max-height: fit-content;
+	padding: 1rem;
+}
+
+.content {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.links {
+	display: none;
+}
+
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+	.content {
+		display: flex;
+		justify-content: space-between;
+		min-width: 100%;
+		max-width: 20rem;
+	}
+
+	.links {
+		min-width: 10rem;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.links a {
+		text-decoration: none;
+		align-self: center;
+	}
+
+	.links :any-link {
+		color: black;
+	}
+
+	.menu img {
+		display: none;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.menu img {
+		display: none;
+	}
+	.links {
+		min-width: 10rem;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.content {
+		max-width: 70rem;
+		margin: 0 auto;
+	}
+	.links :any-link {
+		color: black;
+		text-decoration: none;
+	}
+}

@@ -1,0 +1,95 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 2rem;
+  padding: 1rem;
+  text-decoration: none;
+  color: black;
+  border-radius: 0.4rem;
+  min-height: 10rem;
+  border: solid 4px #3b8f93;
+  transition: ease-in-out 200ms;
+}
+
+.card:hover {
+  box-shadow: 0 0 5px 1px #a9ede7;
+  transform: scale(1.03);
+}
+
+.container p {
+  padding: 0 3rem;
+}
+
+.logo {
+  margin: 0 auto;
+  max-width: 10rem;
+}
+
+.logoMain {
+  height: 6rem;
+}
+
+.logoSecondary {
+  height: 3rem;
+  max-width: 8rem;
+}
+
+.membersButton button {
+  display: flex;
+  justify-content: center;
+  border: none;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  margin: 0 auto;
+  background-color: #00535a;
+  color: whitesmoke;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.button {
+  text-decoration: none;
+}
+
+.text {
+  max-width: 100%;
+  display: flex;
+  padding: 0 3rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+@media screen and (min-width: 480px) and (max-width: 768px) {
+  .logo {
+    max-width: 8rem;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    flex-basis: 36%;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .container {
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+  }
+
+  .card {
+    flex: 1 1;
+  }
+  .text {
+    max-height: 100%;
+  }
+}
