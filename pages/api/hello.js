@@ -76,13 +76,23 @@
 
 // }
 
-export default function handler(req, res) {
+export const handler = async (req, res) => {
 	// Check for secret to confirm this is a valid request
+	const algoliasearch = require('algoliasearch')
+	// Connect and authenticate with your Algolia app
+	// const client = algoliasearch('BC0Z4HS7B1', '7c31f7f4e01eaf32e1ce709e3ec8dd4c')
+
+	// Create a new index and add a record
+	const index = client.initIndex('test_index')
 
 	try {
 		// this should be the actual path not a rewritten path
 		// e.g. for "/blog/[slug]" this should be "/blog/post-1"
-		const { slug } = req.body
+		const record = { objectID: 1, name: 'test_record' }
+		await index.saveObject(record)
+
+		// Search the index and print the results
+		// const { slug } = req.body
 		res.status(200).json({ msg: 'yes' })
 	} catch (err) {
 		// If there was an error, Next.js will continue
