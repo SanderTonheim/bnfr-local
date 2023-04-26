@@ -88,7 +88,6 @@ const handler = async (req, res) => {
 		const record = cmsData.map((item) => {
 			const obj = { objectID: item._id, name: item.name }
 			index.saveObject(obj)
-			return
 		})
 
 		// const { slug } = req.body
