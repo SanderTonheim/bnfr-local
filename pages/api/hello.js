@@ -83,7 +83,7 @@ export default function handler(req, res) {
 		// this should be the actual path not a rewritten path
 		// e.g. for "/blog/[slug]" this should be "/blog/post-1"
 		const { slug } = req.body
-		res.status(200).json({ msg: { slug } })
+		res.status(200).json({ msg: 'yes' })
 	} catch (err) {
 		// If there was an error, Next.js will continue
 		// to show the last successfully generated page
