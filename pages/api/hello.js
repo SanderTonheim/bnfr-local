@@ -77,10 +77,15 @@ const handler = (req, res) => {
 	const algoliasearch = require('algoliasearch')
 	const client = algoliasearch('BC0Z4HS7B1', '7c31f7f4e01eaf32e1ce709e3ec8dd4c')
 	const index = client.initIndex('Members')
-
-	const record = { objectID: 1, name: 'test_record' }
-	index.saveObject(record).wait()
-
+	index.saveObject({
+			firstname: 'Jimmie',
+			lastname: 'Barninger',
+			city: 'New York',
+			objectID: 'myID',
+		})
+		.then(() => {
+			// done
+		})
 	res.status(200).json({ slug })
 }
 
