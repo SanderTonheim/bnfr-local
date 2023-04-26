@@ -7,7 +7,7 @@ export default function Tags({ list }) {
 		return (
 			<li
 				className={s.container}
-				>
+				key={tag.Name}>
 				{tag?.Name}
 				{/* <img
 					key={tag?._id}
