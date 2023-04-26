@@ -78,6 +78,23 @@ const handler = (req, res) => {
 		const algoliasearch = require('algoliasearch')
 		const client = algoliasearch('BC0Z4HS7B1', process.env.ALGOLIA_KEY)
 		const index = client.initIndex('Members')
+		
+		const objects = [
+			{
+				firstname: 'Jimmie',
+				lastname: 'Barninger',
+				objectID: 'myID1',
+			},
+			{
+				firstname: 'Warren',
+				lastname: 'Speach',
+				objectID: 'myID2',
+			},
+		]
+
+		index.saveObjects(objects).then(({ objectIDs }) => {
+			console.log(objectIDs)
+		})
 
 		res.status(200).json({ msg: 'Product pages revalidated.' })
 	} catch (error) {
