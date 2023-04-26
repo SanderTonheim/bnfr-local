@@ -86,18 +86,14 @@ const handler = async (req, res) => {
 	const cmsData = await Client.fetch(groq`*[_type == "medlem"]`)
 	try {
 		const record = cmsData.map((item) => {
-			return {
-				objectID: item._id,
-				name: item.name,
-			}
+			const obj = { objectID: item._id, name: item.name }
+			return obj
 		})
 
-		// const record = { objectID: 1, name: 'test_record' }
-		index.saveObject(cmsData)
+		index.saveObject(record)
 
-		// Search the index and print the results
 		// const { slug } = req.body
-		res.status(200).json(cmsData)
+		res.status(200).json(record)
 	} catch (err) {
 		// If there was an error, Next.js will continue
 		// to show the last successfully generated page
