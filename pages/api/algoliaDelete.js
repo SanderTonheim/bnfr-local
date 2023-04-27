@@ -11,7 +11,7 @@ const handler = async (req, res) => {
 		index.deleteObject(slug).then(() => {
 			// done
 		})
-		// await res.revalidate(`/profile`)
+		await res.revalidate(`/profile`)
 
 		res.status(200).json({ msg: 'updated' })
 	} catch (err) {
