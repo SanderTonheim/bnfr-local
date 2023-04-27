@@ -20,6 +20,9 @@ export default {
 			type: 'image',
 			description: 'Legg til logo til bedriften.',
 			validation: (Rule) => Rule.required(),
+			options: {
+				hotspot: true,
+			},
 		},
 		{
 			title: 'Adresse',
