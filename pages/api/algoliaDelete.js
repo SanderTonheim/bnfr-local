@@ -8,11 +8,10 @@ const handler = async (req, res) => {
 	const index = client.initIndex('Members')
 	try {
 		const { slug } = req.body
-		index.getObject(slug).then((object) => {
-			console.log(object)
-		})
-		await res.revalidate(`/profile`)
-		await res.revalidate(`/profile/${slug}`)
+		// index.getObject(slug).then((object) => {
+		// 	console.log(object)
+		// })
+		// await res.revalidate(`/profile`)
 
 		res.status(200).json({ msg: 'updated' })
 	} catch (err) {
