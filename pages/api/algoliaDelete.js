@@ -8,8 +8,8 @@ const handler = async (req, res) => {
 	const index = client.initIndex('Members')
 	try {
 		const { slug } = req.body
-		index.getObject(slug).then((object) => {
-			console.log(object)
+		index.deleteObject(slug).then(() => {
+			// done
 		})
 		// await res.revalidate(`/profile`)
 
