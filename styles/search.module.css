@@ -1,4 +1,18 @@
-.search {
+.searchBox {
+	background-color: black;
+	display: flex;
+	justify-content: center;
+}
+.searchBox form {
+	background-color: blue;
+}
+.searchBox input {
+	/* background-color: rgb(63, 63, 94); */
+	width: 400px;
+	padding: .5em 0.2rem;
+  margin: 0%;
+}
+/* .search {
   max-width: 100%;
   display: flex;
   align-items: center;
@@ -7,6 +21,10 @@
   margin: 1rem;
   border-radius: 2rem;
 }
+
+  .searchBox {
+    background-color: black;
+  }
 
 .search:hover {
   box-shadow: 0 0 10px 1px #a9ede7;
@@ -74,4 +92,5 @@
     left: 29rem;
     top: 24rem;
   }
-}
+
+} */
