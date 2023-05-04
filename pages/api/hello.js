@@ -84,7 +84,13 @@ const handler = async (req, res) => {
 	const client = algoliasearch('BC0Z4HS7B1', '7c31f7f4e01eaf32e1ce709e3ec8dd4c')
 	const index = client.initIndex('Members')
 	try {
-		const cmsData = await Client.fetch(groq`*[_type == "medlem"]`)
+		const cmsData = await Client.fetch(groq`*[_type == "medlem"]{
+			name, 
+			_id,
+			certifications[]->,
+			connections[]->,
+			tag[]->,
+			contactPerson`)
 		cmsData.map((item) => {
 			const obj = { objectID: item.name, name: item.name, tags: item.tag[0].Name }
 			index.saveObject(obj)
