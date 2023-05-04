@@ -88,6 +88,7 @@ const handler = async (req, res) => {
 		cmsData.map((item) => {
 			const obj = { objectID: item.name, name: item.name, tags: item.tag[0].Name }
 			index.saveObject(obj)
+			return
 		})
 		const { slug } = req.body
 		await res.revalidate(`/profile`)
