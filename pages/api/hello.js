@@ -86,7 +86,7 @@ const handler = async (req, res) => {
 	try {
 		const cmsData = await Client.fetch(groq`*[_type == "medlem"]`)
 		cmsData.map((item) => {
-			const obj = { objectID: item.name, name: item.name, tags: item.tag[0].name }
+			const obj = { objectID: item.name, name: item.name, tags: item.tag[0].Name }
 			index.saveObject(obj)
 		})
 		const { slug } = req.body
