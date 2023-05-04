@@ -92,7 +92,7 @@ const handler = async (req, res) => {
 			tag[]->,
 			contactPerson}`)
 		cmsData.map((item) => {
-			const obj = { objectID: item.name, name: item.name, tags: item.tag.map((tag) => tag.Name) }
+			const obj = { objectID: item.name, name: item.name, tags: item.tag }
 			index.saveObject(obj)
 			return
 		})
