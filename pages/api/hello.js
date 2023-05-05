@@ -91,8 +91,15 @@ const handler = async (req, res) => {
 			connections[]->{name},
 			tag[]->{Name},
 			contactPerson}`)
+
 		cmsData.map((item) => {
-			const obj = { objectID: item.name, name: item.name, tags: item.tag, certifications: item.certifications, connections: item.connections }
+			const obj = {
+				objectID: item.name,
+				name: item.name,
+				tags: item.tag,
+				certifications: item.certifications,
+				connections: item.connections,
+			}
 			index.saveObject(obj)
 			return
 		})
@@ -102,8 +109,6 @@ const handler = async (req, res) => {
 
 		res.status(200).json({ msg: 'updated' })
 	} catch (err) {
-		// If there was an error, Next.js will continue
-		// to show the last successfully generated page
 		return res.status(500).send('Error revalidating')
 	}
 }
