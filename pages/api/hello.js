@@ -101,7 +101,7 @@ const handler = async (req, res) => {
 				tags: item.tag,
 				certifications: item.certifications,
 				connections: item.connections,
-				slug: item.slug.current,
+				slug: item.slug,
 			}
 			index.saveObject(obj)
 			return
