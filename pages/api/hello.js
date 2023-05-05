@@ -90,7 +90,9 @@ const handler = async (req, res) => {
 			certifications[]->{name},
 			connections[]->{name},
 			tag[]->{Name},
-			contactPerson}`)
+			contactPerson,
+			"slug":slug.current,
+		}`)
 
 		cmsData.map((item) => {
 			const obj = {
