@@ -94,7 +94,7 @@ const handler = async (req, res) => {
 
 		cmsData.map((item) => {
 			const obj = {
-				objectID: item.name,
+				objectID: item.slug.current,
 				name: item.name,
 				tags: item.tag,
 				certifications: item.certifications,
