@@ -18,18 +18,20 @@ export default function Search() {
 				indexName={'Members'}
 				searchClient={searchClient}
 				onStateChange={onStateChange}>
-				<SearchBox
-					className={s.searchBox}
-					placeholder='Søk etter bedrifter'
-				/>
-				{value?.length > 2 ? (
-					<Hits
-						className={s.hits}
-						hitComponent={Hit}
+				<div className={s.search}>
+					<SearchBox
+						className={s.searchBox}
+						placeholder='Søk etter bedrifter'
 					/>
-				) : (
-					<></>
-				)}
+					{value?.length > 2 ? (
+						<Hits
+							className={s.hits}
+							hitComponent={Hit}
+						/>
+					) : (
+						<></>
+					)}
+				</div>
 			</InstantSearch>
 		</div>
 	)
