@@ -34,7 +34,7 @@ export default function ProfilePage({ post }) {
 					/>
 				</div>
 				<div className={s.section_2}>
-					<div>
+					<div className={s.tagsContainer}>
 						{post.tag < 1 ? ' ' : <Tags list={post.tag} />}
 						{post.certifications < 1 ? '' : <Certifications list={post.certifications} />}
 						{post.connections && <Connections list={post.connections} />}
