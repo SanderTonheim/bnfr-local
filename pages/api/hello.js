@@ -94,11 +94,12 @@ const handler = async (req, res) => {
 
 		cmsData.map((item) => {
 			const obj = {
-				objectID: item.slug,
+				objectID: item.name,
 				name: item.name,
 				tags: item.tag,
 				certifications: item.certifications,
 				connections: item.connections,
+				slug: item.slug.current,
 			}
 			index.saveObject(obj)
 			return
