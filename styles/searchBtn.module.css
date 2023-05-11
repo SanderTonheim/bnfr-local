@@ -1,27 +1,74 @@
 /* ----- Knapper - for desktop/tablet ----- */
 
-.filterBtn {
-  width: 188px;
-  height: fit-content;
-  color: #ffffff;
-  background: #00535a;
-  border-radius: 32px;
-  border: none;
-  margin: 0.5rem;
-  padding: 8px 16px;
-  cursor: pointer;
-  transition: ease-in-out 100ms;
+.filterButtonContainer {
+	display: flex;
+	width: 100%;
+	justify-content: space-evenly;
 }
 
-.filterBtn:hover {
-  box-shadow: 0 0 10px 1px #a9ede7;
-  transform: scale(1.03);
+.button {
+	width: 188px;
+	height: fit-content;
+	color: #ffffff;
+	background: #00535a;
+	border-radius: 32px;
+	border: none;
+	margin: 0.5rem;
+	padding: 8px 16px;
+	cursor: pointer;
+	transition: ease-in-out 100ms;
 }
 
-/* ----- Media Query for å bytte ut knapper med modal ----- */
+.button:hover {
+	box-shadow: 0 0 10px 1px #a9ede7;
+	transform: scale(1.03);
+}
 
+.company {
+	display: flex;
+	align-items: center;
+	flex-direction: row-reverse;
+	justify-content: center;
+	gap: 1rem;
+}
+
+.company a {
+	color: #000;
+	text-decoration: none;
+	width: 10rem;
+}
+
+.company img {
+	width: 2rem;
+}
+
+.hit ul {
+	list-style-type: none;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(auto-fill, 2rem);
+	grid-column-gap: 0.5rem;
+	grid-row-gap: 0.5rem;
+}
+
+.filterList {
+	position: relative;
+}
+
+.filterList ul {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 0.3rem;
+}
+
+.filterList label {
+	list-style: none;
+	display: flex;
+	gap: 0.5rem;
+}
 @media screen and (min-width: 355px) and (max-width: 694px) {
-  .filterBtn {
-    display: none;
-  }
+	.filterBtn {
+		display: none;
+	}
 }

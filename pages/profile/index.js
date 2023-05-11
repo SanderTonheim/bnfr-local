@@ -3,10 +3,8 @@ import Link from 'next/link'
 import Search from '../../components/search'
 import icons from '../../assets/icons/index'
 import arrow from '../../assets/arrow.svg'
-import { CertificationsBtn, ConnectionsBtn, TagsBtn } from '../../components/filterBtns'
-import MobileFilter from '../../components/mobileFilter'
+import TagsFilter from '../../components/filter/tagsFilter'
 /* --------------------------------- sanity --------------------------------- */
-
 import groq from 'groq'
 import { Client } from '../../client'
 /* ------------------------------------ Render items on page ----------------------------------- */
@@ -33,13 +31,13 @@ const ProfileList = ({ medlem }) => {
 				<section className={s.search}>
 					<Search />
 				</section>
+				<TagsFilter />
 				<section className={s.filterBtns}>
-					<TagsBtn />
-					<CertificationsBtn />
-					<ConnectionsBtn />
-					<MobileFilter />
+					{/* <CertificationsBtn /> */}
+					{/* <ConnectionsBtn /> */}
+					{/* <MobileFilter /> */}
 				</section>
-				<section className={s.list}>
+				{/* <section className={s.list}>
 					{medlem.map((medlem) => {
 						return (
 							<div
@@ -59,7 +57,7 @@ const ProfileList = ({ medlem }) => {
 							</div>
 						)
 					})}
-				</section>
+				</section> */}
 			</div>
 		</>
 	)
