@@ -38,19 +38,17 @@ export default function TagsFilter() {
 			indexName='Members'
 			searchClient={searchClient}>
 			<div className={s.filterButtonContainer}>
-				<div>
+				<div className='singelButton'>
 					<button
 						className={s.button}
 						onClick={() => setCategory(!category)}>
 						Kategorier
 					</button>
-					{category && (
-						<RefinementList
-							operator='and'
-							attribute={'tags.Name'}
-							className={s.filterList}
-						/>
-					)}
+					<div
+						className={s.filterList}
+						style={{ visibility: category ? 'visible' : 'hidden' }}>
+						<RefinementList attribute={'tags.Name'} />
+					</div>
 				</div>
 
 				<div>
@@ -59,13 +57,13 @@ export default function TagsFilter() {
 						onClick={() => setCertification(!certification)}>
 						Sertifiseringer
 					</button>
-					{certification && (
+					<div style={{ display: certification ? 'inline' : 'none' }}>
 						<RefinementList
 							operator='and'
 							attribute={'certifications.name'}
 							className={s.filterList}
 						/>
-					)}
+					</div>
 				</div>
 				<div>
 					<button
@@ -73,13 +71,13 @@ export default function TagsFilter() {
 						onClick={() => setConnections(!connections)}>
 						Tilknytninger
 					</button>
-					{connections && (
+					<div style={{ display: connections ? 'inline' : 'none' }}>
 						<RefinementList
 							operator='and'
-							attribute={'tags.Name'}
+							attribute={'connections.name'}
 							className={s.filterList}
 						/>
-					)}
+					</div>
 				</div>
 			</div>
 			<Hits

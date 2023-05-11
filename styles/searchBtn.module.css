@@ -8,13 +8,12 @@
 
 .button {
 	width: 188px;
-	height: fit-content;
 	color: #ffffff;
 	background: #00535a;
 	border-radius: 32px;
 	border: none;
 	margin: 0.5rem;
-	padding: 8px 16px;
+	padding: 0.6rem 0rem;
 	cursor: pointer;
 	transition: ease-in-out 100ms;
 }
@@ -52,7 +51,12 @@
 }
 
 .filterList {
-	position: relative;
+	position: absolute;
+
+	border-radius: 0px 0px 16px 16px;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(18.6px);
+	-webkit-backdrop-filter: blur(18.6px);
 }
 
 .filterList ul {
@@ -66,6 +70,11 @@
 	list-style: none;
 	display: flex;
 	gap: 0.5rem;
+}
+
+.singelButton {
+	display: flex;
+	flex-direction: column;
 }
 @media screen and (min-width: 355px) and (max-width: 694px) {
 	.filterBtn {
