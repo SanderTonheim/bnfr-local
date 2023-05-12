@@ -37,11 +37,7 @@ export default function SecondarySponsors() {
           );
         })}
       </div>
-      <div className={s.membersButton}>
-        <Link className={s.button} href={"/profile"}>
-          <button>Se alle medlemmer</button>
-        </Link>
-      </div>
+     
     </>
   );
 }

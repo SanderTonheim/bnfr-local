@@ -28,36 +28,10 @@ const ProfileList = ({ medlem }) => {
 				/>
 			</div>
 			<div className={s.container}>
-				<section className={s.search}>
+				<div className={s.search}>
 					<Search />
-				</section>
+				</div>
 				<TagsFilter />
-				<section className={s.filterBtns}>
-					{/* <CertificationsBtn /> */}
-					{/* <ConnectionsBtn /> */}
-					{/* <MobileFilter /> */}
-				</section>
-				{/* <section className={s.list}>
-					{medlem.map((medlem) => {
-						return (
-							<div
-								className={s.company}
-								key={medlem._id}>
-								<Link
-									className={s.link}
-									href={'/profile/' + medlem.slug.current.toString()}>
-									{medlem.name}
-								</Link>
-								<div className={s.image}>
-									<img
-										src={icons.member.src}
-										alt='member icon picture'
-									/>
-								</div>
-							</div>
-						)
-					})}
-				</section> */}
 			</div>
 		</>
 	)

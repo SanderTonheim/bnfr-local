@@ -13,26 +13,22 @@ export default function Search() {
 		setValue(e.uiState.Members.query)
 	}
 	return (
-		<div className={s.container}>
-			<InstantSearch
-				indexName={'Members'}
-				searchClient={searchClient}
-				onStateChange={onStateChange}>
-				<div className={s.search}>
-					<SearchBox
-						className={s.searchBox}
-						placeholder='Søk etter bedrifter'
-					/>
-					{value?.length > 2 ? (
-						<Hits
-							className={s.hits}
-							hitComponent={Hit}
-						/>
-					) : (
-						<></>
-					)}
-				</div>
-			</InstantSearch>
-		</div>
+		<InstantSearch
+			indexName={'Members'}
+			searchClient={searchClient}
+			onStateChange={onStateChange}>
+			<SearchBox
+				className={s.searchBox}
+				placeholder='Søk etter bedrifter'
+			/>
+			{value?.length > 2 ? (
+				<Hits
+					className={s.hits}
+					hitComponent={Hit}
+				/>
+			) : (
+				''
+			)}
+		</InstantSearch>
 	)
 }
