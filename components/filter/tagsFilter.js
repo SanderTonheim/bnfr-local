@@ -38,7 +38,8 @@ export default function TagsFilter() {
 			indexName='Members'
 			searchClient={searchClient}>
 			<div className={s.filterButtonContainer}>
-				<div className='singelButton'>
+				{/* /* ----------------------------------------------------------------------- */}
+				<div className={s.buttonListContainer}>
 					<button
 						className={s.button}
 						onClick={() => setCategory(!category)}>
@@ -50,36 +51,35 @@ export default function TagsFilter() {
 						<RefinementList attribute={'tags.Name'} />
 					</div>
 				</div>
+				{/* /* ----------------------------------------------------------------------- */}
 
-				<div>
+				<div className={s.buttonListContainer}>
 					<button
 						className={s.button}
 						onClick={() => setCertification(!certification)}>
 						Sertifiseringer
 					</button>
-					<div style={{ display: certification ? 'inline' : 'none' }}>
-						<RefinementList
-							operator='and'
-							attribute={'certifications.name'}
-							className={s.filterList}
-						/>
+					<div
+						className={s.filterList}
+						style={{ visibility: certification ? 'visible' : 'hidden' }}>
+						<RefinementList attribute={'certifications.name'} />
 					</div>
 				</div>
-				<div>
+
+				<div className={s.buttonListContainer}>
 					<button
 						className={s.button}
 						onClick={() => setConnections(!connections)}>
-						Tilknytninger
+						Tilknyttninger
 					</button>
-					<div style={{ display: connections ? 'inline' : 'none' }}>
-						<RefinementList
-							operator='and'
-							attribute={'connections.name'}
-							className={s.filterList}
-						/>
+					<div
+						className={s.filterList}
+						style={{ visibility: connections ? 'visible' : 'hidden' }}>
+						<RefinementList attribute={'connections.name'} />
 					</div>
 				</div>
 			</div>
+
 			<Hits
 				hitComponent={Hit}
 				className={s.hit}

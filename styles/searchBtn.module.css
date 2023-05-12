@@ -1,19 +1,26 @@
 /* ----- Knapper - for desktop/tablet ----- */
 
 .filterButtonContainer {
-	display: flex;
 	width: 100%;
-	justify-content: space-evenly;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
 }
 
+.buttonListContainer {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	height: 3rem;
+}
 .button {
-	width: 188px;
+	width: 100%;
 	color: #ffffff;
 	background: #00535a;
 	border-radius: 32px;
 	border: none;
-	margin: 0.5rem;
-	padding: 0.6rem 0rem;
+	padding: 1rem;
 	cursor: pointer;
 	transition: ease-in-out 100ms;
 }
@@ -34,7 +41,7 @@
 .company a {
 	color: #000;
 	text-decoration: none;
-	width: 10rem;
+	width: 7rem;
 }
 
 .company img {
@@ -51,12 +58,15 @@
 }
 
 .filterList {
-	position: absolute;
-
+	width: 100%;
 	border-radius: 0px 0px 16px 16px;
 	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 	backdrop-filter: blur(18.6px);
 	-webkit-backdrop-filter: blur(18.6px);
+}
+
+.filterList div {
+	position: relative;
 }
 
 .filterList ul {
@@ -64,20 +74,48 @@
 	display: flex;
 	flex-direction: column;
 	gap: 0.3rem;
+	padding: 1rem;
 }
 
 .filterList label {
 	list-style: none;
 	display: flex;
 	gap: 0.5rem;
+	align-items: center;
 }
 
 .singelButton {
 	display: flex;
 	flex-direction: column;
 }
-@media screen and (min-width: 355px) and (max-width: 694px) {
-	.filterBtn {
-		display: none;
+
+@media screen and (max-width: 425px) {
+	.hit ul {
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(auto-fill, 2rem);
+	}
+	.hit ul li {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.hit ul li a {
+		width: fit-content;
 	}
 }
+
+/* @media screen and (min-width: 355px) and (max-width: 694px) {
+	.filterButtonContainer {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.hit ul {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(auto-fill, 2rem);
+		grid-column-gap: 0.5rem;
+		grid-row-gap: 0.5rem;
+	}
+}*/
