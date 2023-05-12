@@ -1,22 +1,29 @@
 .container {
-	margin: 1rem 0;
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
-	max-width: 100%;
+	width: 100%;
 }
-
+.searchAndResult {
+	width: 100%;
+}
 .searchBox {
 	display: flex;
 	justify-content: center;
 	border: none;
+	width: 100%;
 }
+
+.searchBox form {
+	width: 100%;
+}
+
 .searchBox form button {
 	display: none;
 }
 .searchBox input {
 	font-size: 1rem;
-	width: 500px;
+	width: 100%;
 	padding: 0.7rem 1rem;
 	margin: 0%;
 	border: 2px solid #3f9094;
@@ -32,14 +39,15 @@
 .hits {
 	display: flex;
 	justify-content: center;
+	width: 100%;
+	position: relative;
 }
 
 .hits ol {
-	width: 500px;
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	position: absolute;
 	/* From https://css.glass */
 	background: rgba(231, 232, 232, 0.6);
 	border-radius: 0px 0px 16px 16px;
@@ -49,73 +57,9 @@
 	list-style-type: none;
 	gap: 0.5rem;
 	padding: 1rem 0;
+	position: absolute;
 }
 
 .hits ol li {
 	margin: 0 1rem;
-}
-
-@media screen and (min-width: 320px) and (max-width: 374px) {
-	.searchBox form {
-		width: 280px;
-	}
-	.searchBox input {
-		width: 280px;
-	}
-
-	.hits ol {
-		width: 280px;
-	}
-}
-
-@media screen and (min-width: 375px) and (max-width: 425px) {
-	.searchBox form {
-		width: 360px;
-	}
-	.searchBox input {
-		width: 360px;
-	}
-
-	.hits ol {
-		width: 360px;
-	}
-}
-
-@media screen and (min-width: 425px) and (max-width: 767px) {
-	.searchBox form {
-		width: 90%;
-	}
-	.searchBox input {
-		width: 100%;
-	}
-
-	.hits ol {
-		width: 90%;
-	}
-}
-
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-	.searchBox form {
-		width: 80%;
-	}
-	.searchBox input {
-		width: 100%;
-	}
-
-	.hits ol {
-		width: 80%;
-	}
-}
-
-@media screen and (min-width: 1024px) {
-	.searchBox form {
-		width: 1130px;
-	}
-	.searchBox input {
-		width: 100%;
-	}
-
-	.hits ol {
-		width: 1130px;
-	}
 }
