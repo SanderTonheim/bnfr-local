@@ -14,6 +14,7 @@
 	flex-direction: column;
 	height: 3rem;
 }
+
 .button {
 	width: 100%;
 	color: #ffffff;
@@ -34,24 +35,27 @@
 	display: flex;
 	align-items: center;
 	flex-direction: row-reverse;
-	justify-content: center;
+	justify-content: start;
 	gap: 1rem;
 }
 
 .company a {
 	color: #000;
 	text-decoration: none;
-	width: 7rem;
 }
 
 .company img {
 	width: 2rem;
 }
 
+.hit {
+	width: 100%;
+}
+
 .hit ul {
 	list-style-type: none;
 	display: grid;
-	grid-template-columns: repeat(4, 1fr);
+	grid-template-columns: repeat(1, 1fr);
 	grid-template-rows: repeat(auto-fill, 2rem);
 	grid-column-gap: 0.5rem;
 	grid-row-gap: 0.5rem;
@@ -89,7 +93,7 @@
 	flex-direction: column;
 }
 
-@media screen and (max-width: 425px) {
+/* @media screen and (max-width: 425px) {
 	.hit ul {
 		grid-template-columns: repeat(2, 1fr);
 		grid-template-rows: repeat(auto-fill, 2rem);
@@ -102,7 +106,7 @@
 	.hit ul li a {
 		width: fit-content;
 	}
-}
+} */
 
 /* @media screen and (min-width: 355px) and (max-width: 694px) {
 	.filterButtonContainer {
