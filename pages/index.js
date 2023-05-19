@@ -51,7 +51,7 @@ const Home = () => {
 						alt='Main Sponsors'
 					/>
 				</div>
-				<div>
+				<div className={s.mainSponsorContainer}>
 					<SecondarySponsors />
 				</div>
 				<div className={s.membersButton}>
