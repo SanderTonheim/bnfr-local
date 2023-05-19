@@ -9,10 +9,10 @@
 }
 
 .buttonListContainer {
-	width: 100%;
 	display: flex;
 	flex-direction: column;
 	height: 3rem;
+	width: 100%;
 }
 
 .button {
@@ -32,6 +32,7 @@
 	flex-direction: row-reverse;
 	justify-content: start;
 	gap: 1rem;
+	width: 100%;
 }
 
 .company a {
@@ -44,7 +45,7 @@
 }
 
 .hit {
-	width: 90%;
+	width: 100%;
 }
 
 .hit ul {
@@ -86,21 +87,12 @@
 .singelButton {
 	display: flex;
 	flex-direction: column;
+	width: 100%;
 }
 
-@media screen and (min-width: 1024px) {
-	.button:hover {
-		box-shadow: 0 0 10px 1px #a9ede7;
-		transform: scale(1.03);
-	}
-}
 @media screen and (min-width: 768px) {
 	.hit ul {
 		grid-template-columns: repeat(2, 1fr);
-	}
-
-	.button {
-		width: 17rem;
 	}
 
 	.filterButtonContainer {
@@ -114,7 +106,14 @@
 
 @media screen and (min-width: 1024px) {
 	.hit ul {
+		margin: 1rem auto;
+		max-width: 1280px;
 		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.button:hover {
+		box-shadow: 0 0 10px 1px #a9ede7;
+		transform: scale(1.03);
 	}
 }
 

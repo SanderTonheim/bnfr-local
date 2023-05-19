@@ -32,7 +32,7 @@
 
 .section_2 {
 	display: flex;
-	justify-content: space-between;
+	gap: 1rem;
 	align-items: flex-start;
 	flex-direction: column;
 }

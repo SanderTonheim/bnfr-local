@@ -12,6 +12,7 @@
 	justify-content: center;
 	border: none;
 	width: 100%;
+	margin: 0 auto;
 }
 
 .searchBox form {
@@ -62,4 +63,10 @@
 
 .hits ol li {
 	margin: 0 1rem;
+}
+
+@media screen and (min-width: 1120px) {
+	.searchBox {
+		max-width: 100%;
+	}
 }
