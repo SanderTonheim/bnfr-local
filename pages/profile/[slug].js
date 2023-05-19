@@ -49,16 +49,15 @@ export default function ProfilePage({ post }) {
 						)}
 					</div>
 				</div>
-
-				{post.ActiveMap == false ? (
-					' '
-				) : (
-					<CompanyMap
-						lat={post.location?.lat}
-						lng={post.location?.lng}
-					/>
-				)}
 			</div>
+			{post.ActiveMap == false ? (
+				' '
+			) : (
+				<CompanyMap
+					lat={post.location?.lat}
+					lng={post.location?.lng}
+				/>
+			)}
 		</>
 	)
 }
@@ -86,7 +85,7 @@ export async function getStaticProps(context) {
 		groq`
 	  *[_type == "medlem" && slug.current == $slug][0]{
   name, 
-  _id,
+  _id, 
   logo,
 	location,
   certifications[]->,
