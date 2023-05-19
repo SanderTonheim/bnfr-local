@@ -23,7 +23,6 @@ export default function ProfilePage({ post }) {
 						src={icons.member.src}
 						alt='members icon'
 					/>
-					{post.name}
 				</h1>
 				<div className={s.section_1}>
 					<p className={s.text}>{post.text}</p>
