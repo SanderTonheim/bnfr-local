@@ -26,11 +26,6 @@
 	transition: ease-in-out 100ms;
 }
 
-.button:hover {
-	box-shadow: 0 0 10px 1px #a9ede7;
-	transform: scale(1.03);
-}
-
 .company {
 	display: flex;
 	align-items: center;
@@ -91,6 +86,36 @@
 .singelButton {
 	display: flex;
 	flex-direction: column;
+}
+
+@media screen and (min-width: 1024px) {
+	.button:hover {
+		box-shadow: 0 0 10px 1px #a9ede7;
+		transform: scale(1.03);
+	}
+}
+@media screen and (min-width: 768px) {
+	.hit ul {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.button {
+		width: 17rem;
+	}
+
+	.filterButtonContainer {
+		flex-direction: row;
+	}
+
+	.buttonListContainer {
+		align-items: center;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.hit ul {
+		grid-template-columns: repeat(3, 1fr);
+	}
 }
 
 /* @media screen and (max-width: 425px) {
